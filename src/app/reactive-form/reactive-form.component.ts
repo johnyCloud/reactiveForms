@@ -15,7 +15,7 @@ export class ReactiveFormComponent implements OnInit  {
   ngOnInit() {
     this.customInputForm = this.formBuilder.group(
       {
-        email: [''],
+        email: [],
         fullname: [''],
         phone: [{
           value: '1234567890',

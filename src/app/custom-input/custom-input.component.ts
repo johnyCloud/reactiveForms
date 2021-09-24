@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Self, Optional ,forwardRef} from '@angular/core';
-import { ControlValueAccessor, NgControl,NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, OnInit, Input ,forwardRef} from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'custom-input',
@@ -14,11 +14,27 @@ import { ControlValueAccessor, NgControl,NG_VALUE_ACCESSOR } from '@angular/form
   ]
 })
 export class CustomInputComponent implements  ControlValueAccessor {
+  @Input() type?:
+    | 'text'
+    | 'textarea'
+    | 'email'
+    | 'password'
+    | 'tel'
+    | 'address' = 'text';
   @Input() disabled?: boolean;
   @Input() label?: string;
   @Input() placeholder?: string = '';
-  @Input() type: 'text' | 'email' | 'password' = 'text';
+  
 
+  @Input() autocomplete = 'off';
+  @Input() class = '';
+  @Input() step?: number;
+
+  @Input() title = '';
+  @Input() maxLength?: number;
+  @Input() minLength?: number;
+  @Input() max?: number;
+  @Input() min?: number;
   value: any = '';
 
   constructor() {}

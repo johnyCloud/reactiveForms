@@ -1,8 +1,17 @@
 <label>{{ label }}</label>
-<input [type]="type"
+<input #input
+       [type]="type"
        [placeholder]="placeholder"
        [value]="value"
        [disabled]="disabled"
-       #input
+       [title]="title"
+       
+       [autocomplete]="autocomplete"
+       [class]="class"
+       [step]="step"
+      
+
+       
+       
        (input)="onChange(input.value)"
        (blur)="onTouched()" />

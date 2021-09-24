@@ -1,6 +1,7 @@
 
 <form [formGroup]="customInputForm" *ngIf="customInputForm">
   <custom-input 
+  type="address"
     label="Name" 
     placeholder="Enter name"
     formControlName="fullname">
@@ -8,14 +9,17 @@
   
   <br>
   
-  <custom-input label="Email " 
+  <custom-input label="Email "
+                type="email"
                 placeholder="example@mail.com"
                 formControlName="email">
   </custom-input>
   <br>
-  <custom-input label="Phone number" 
+  <custom-input 
+                label="Phone number" 
                 formControlName="phone">
   </custom-input>
+  <input type="text">
 </form>
 <pre><code>{{ customInputForm.value | json }}</code></pre>
 
